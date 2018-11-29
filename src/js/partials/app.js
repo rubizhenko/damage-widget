@@ -26,6 +26,25 @@ const Damages = (function() {
         outPlace.text(info.title);
         console.log(info.title);
       });
+
+      const damages = $("[data-damage]");
+      $.each(damages, function(i, el) {
+        const _el = $(el);
+        let color = "";
+
+        const damage = _el.data("damage");
+        switch (damage) {
+          case 1:
+            color = "green";
+            break;
+          case 2:
+            color = "orange";
+            break;
+          default:
+            break;
+        }
+        _el.css("fill", color);
+      });
     }
   };
 })();
